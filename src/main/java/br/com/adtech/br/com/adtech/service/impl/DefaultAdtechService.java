@@ -55,7 +55,6 @@ public class DefaultAdtechService implements AdtechService {
                     }
                 }
 
-                //nasaDTO.setName(nasaEarthObjects.);
             }
 
 
