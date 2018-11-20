@@ -1,13 +1,14 @@
-package br.com.adtech.br.com.adtech.service.impl;
+package nasa.service.impl;
 
 import br.com.adtech.NasaDTO;
-import br.com.adtech.br.com.adtech.data.NasaApproach;
-import br.com.adtech.br.com.adtech.data.NasaEarthObjects;
-import br.com.adtech.br.com.adtech.data.NasaFields;
-import br.com.adtech.br.com.adtech.service.AdtechService;
+import nasa.data.NasaApproach;
+import nasa.data.NasaEarthObjects;
+import nasa.data.NasaFields;
+import nasa.service.AdtechService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
@@ -16,7 +17,8 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Date;
 import java.util.List;
 
-public class DefaultAdtechService implements AdtechService {
+@Service
+public class DefaultAdtechService  implements AdtechService {
 
     @Autowired
     private RestTemplate restTemplate;
@@ -25,7 +27,6 @@ public class DefaultAdtechService implements AdtechService {
     private static final String V2="&end_date=";
     private static final String V3 ="&api_key=6WgoUqBtHNJL0e1YT8ORBK0P54bJNDJLtPaSBdxu";
 
-    @Override
     public NasaDTO getAsteroidInformation(Date dateInitial, Date datefinal) {
 
         StringBuilder stringBuilder = new StringBuilder();

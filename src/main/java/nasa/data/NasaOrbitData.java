@@ -1,4 +1,4 @@
-package br.com.adtech.br.com.adtech.data;
+package nasa.data;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

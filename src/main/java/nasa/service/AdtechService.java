@@ -1,9 +1,8 @@
-package br.com.adtech.br.com.adtech.service;
+package nasa.service;
 
 import br.com.adtech.NasaDTO;
 
 import java.util.Date;
-
 public interface AdtechService {
 
     /**

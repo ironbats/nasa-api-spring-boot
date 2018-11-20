@@ -1,6 +1,6 @@
 package br.com.adtech.api;
 
-import br.com.adtech.br.com.adtech.data.NasaEarthObjects;
+import nasa.data.NasaEarthObjects;
 
 public class Main {
 
