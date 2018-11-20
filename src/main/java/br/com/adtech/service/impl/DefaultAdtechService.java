@@ -1,19 +1,22 @@
-package nasa.service.impl;
+package br.com.adtech.service.impl;
 
-import br.com.adtech.NasaDTO;
-import nasa.data.NasaApproach;
-import nasa.data.NasaEarthObjects;
-import nasa.data.NasaFields;
-import nasa.service.AdtechService;
+import br.com.adtech.data.NasaApproach;
+import br.com.adtech.data.NasaDTO;
+import br.com.adtech.data.NasaEarthObjects;
+import br.com.adtech.data.NasaFields;
+import br.com.adtech.service.AdtechService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -23,14 +26,18 @@ public class DefaultAdtechService  implements AdtechService {
     @Autowired
     private RestTemplate restTemplate;
     private static final Logger LOG = LoggerFactory.getLogger(DefaultAdtechService.class.getName());
-    private static final String V1 = "https://api.nasa.gov/neo/rest/v1/feed?start_date=";
-    private static final String V2="&end_date=";
-    private static final String V3 ="&api_key=6WgoUqBtHNJL0e1YT8ORBK0P54bJNDJLtPaSBdxu";
+    @Value("${nasa.url.feed}")
+    private  String V1;
+    @Value("${nasa.url.feed.v2}")
+    private String V2;
+    @Value("${nasa.url.feed.v3}")
+    private String V3;
 
-    public NasaDTO getAsteroidInformation(Date dateInitial, Date datefinal) {
+    public NasaDTO getAsteroidInformation(Date dateInitial, String datefinal) {
+
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(V1).append(dateInitial).append(V2).append(datefinal).append(V3);
+        stringBuilder.append(V1).append(convertDate(dateInitial)).append(V2).append(datefinal).append(V3);
         NasaDTO nasaDTO = new NasaDTO();
 
         try
@@ -74,5 +81,12 @@ public class DefaultAdtechService  implements AdtechService {
         }
 
         return nasaDTO;
+    }
+
+
+    protected static final String convertDate (Date date)
+    {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+       return dateFormat.format(date);
     }
 }

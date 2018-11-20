@@ -1,6 +1,6 @@
-package nasa.service;
+package br.com.adtech.service;
 
-import br.com.adtech.NasaDTO;
+import br.com.adtech.data.NasaDTO;
 
 import java.util.Date;
 public interface AdtechService {
@@ -13,5 +13,5 @@ public interface AdtechService {
      * @return
      */
 
-    NasaDTO getAsteroidInformation(final Date dateInitial, final Date datefinal);
+    NasaDTO getAsteroidInformation(final Date dateInitial, final String datefinal);
 }

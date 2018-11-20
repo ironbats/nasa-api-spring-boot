@@ -1,6 +1,5 @@
-package br.com.adtech;
+package br.com.adtech.data;
 
-import nasa.data.NasaVelocity;
 
 public class NasaDTO {
 
