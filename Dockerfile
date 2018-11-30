@@ -6,4 +6,4 @@ COPY pom.xml /tmp/
 COPY src /tmp/src/
 WORKDIR /tmp/
 RUN mvn package
-COPY --from=build /tmp/target/AddtechNeas-0.0.1-SNAPSHOT.jar  /opt
+RUN mv /tmp/target/AddtechNeas-0.0.1-SNAPSHOT.jar  /opt
