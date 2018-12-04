@@ -3,6 +3,10 @@
 Api Com springboot  java 8 , focada em consumir uma API da nasa , retornando se um asteroid esta ou nao a caminho da terra
 informando uma data no formato 2018-12-01  - YYYY-MM-dd
 
+# Para que os resultados sejam retornados com sucesso , a data tem que ser posterior no maximo 7 dias do dia atual .
+
+exemplo  :  dia atual 2018-12-01  until  2018-12-07
+
 Ainda temos uma camada de authenticacao mockada , apenas para teste , pois nao ha conexacao com banco de dados para tal service.
 
 
