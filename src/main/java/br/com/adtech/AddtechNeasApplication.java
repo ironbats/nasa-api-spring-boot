@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"br.com.adtech.service",
-		"br.com.adtech.controller","br.com.adtech.swagger"})
+		"br.com.adtech.controller","br.com.adtech.swagger","br.com.adtech.security"})
 public class AddtechNeasApplication {
 
 	public static void main(String[] args) {
@@ -20,4 +20,6 @@ public class AddtechNeasApplication {
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
+
 }
