@@ -1,1 +1,66 @@
-<h1> API NASA </h1>
+<h1> API NASA SPRING BOOT </h1>
+
+
+<p>Api Com springboot  java 8 , focada em consumir uma API da nasa , retornando se um asteroid esta ou nao a caminho da terra
+    informando uma data no formato 2018-12-01  - YYYY-MM-dd </p>
+
+</br>
+
+
+
+<p> Para que os resultados sejam retornados com sucesso , a data tem que ser posterior no maximo 7 dias do dia atual .</p>
+
+<div >
+    exemplo  :  dia atual 2018-12-01  until  2018-12-07
+
+    Ainda temos uma camada de autenticação mockada , apenas para teste , pois nao ha conexacao com banco de dados para tal service.
+</div>
+
+</br>
+
+
+
+<h2><p> Informacoes de authenticacao </p> </h2>
+
+<i>
+
+    <h3>GERAR TOKEN  METHOD POST </h3>
+
+    </br>
+    <i>
+        {
+
+
+        "email" : "felipe.masterdeveloper@gmail.com",
+        "senha" : "7218694275905162237644315182889232904370297308549308135143446232159002679111710949916253034019999587",
+        "grand_type" : "client_credentials"
+
+        }
+
+    </i>
+</i>
+
+
+</br>
+</br>
+
+<h3> RECUPERAR INFORMACOES DE ASTEROIDE NASA </h3>
+
+<p>http://localhost:8080/asteroid-information/2018-12-01 </p>
+
+<p>Content-Type  =  application/json </p>
+
+<p> Authorization  = ${TokenGerado} </p>
+
+
+<h3> Fonte da API  para o desenvolvimento </h3>
+
+https://api.nasa.gov/api.html#NeoWS
+
+
+
+
+
+
+
+
