@@ -7,7 +7,7 @@
 	<groupId>br.com.adtech</groupId>
 	<artifactId>AddtechNeas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>AddtechNeas</name>
 	<description>Demo project for Spring Boot</description>
@@ -155,11 +155,24 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.7.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>${appengine.maven.plugin}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1</version>
 			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
