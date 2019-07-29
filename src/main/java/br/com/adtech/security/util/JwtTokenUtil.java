@@ -19,10 +19,10 @@ public class JwtTokenUtil {
     static final String CLAIM_KEY_AUDIENCE = "audience";
     static final String CLAIM_KEY_CREATED = "created";
 
-    @Value("${jwt.secret}")
+    @Value(value = "${jwt.secret}")
     private String secret;
 
-    @Value("${jwt.expiration}")
+    @Value(value = "${jwt.expiration}")
     private Long expiration;
 
     /**
