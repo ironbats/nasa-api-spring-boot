@@ -11,17 +11,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-<context:property-placeholder location="classpath:application.properties" />
+    <mvc:annotation-driven/>
+
+
+    <context:property-placeholder location="classpath:application.properties" />
     <context:component-scan base-package="br.com.adtech" />
 
     <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
     <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
     <bean class="br.com.adtech.swagger.SwaggerConfig"/>
-
-
-
-
-    <mvc:annotation-driven/>
 
 
 </beans>
