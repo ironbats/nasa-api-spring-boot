@@ -141,7 +141,23 @@
 	</dependencies>
 
 	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
+
+			<plugin>
+				<groupId>com.spring4all</groupId>
+				<artifactId>spring-boot-starter-swagger</artifactId>
+				<version>1.5.0.RELEASE</version>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>com.google.guava</groupId>
+							<artifactId>guava</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
