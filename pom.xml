@@ -126,12 +126,13 @@
 			<version>2.0.5.RELEASE</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.google.collections/google-collections -->
+		<!-- https://mvnrepository.com/artifact/com.google.http-client/google-http-client-jackson2 -->
 		<dependency>
-			<groupId>com.google.collections</groupId>
-			<artifactId>google-collections</artifactId>
-			<version>1.0</version>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-jackson2</artifactId>
+			<version>1.23.0</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework</groupId>
