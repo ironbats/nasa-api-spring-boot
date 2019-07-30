@@ -10,3 +10,7 @@ handlers:
 
 manual_scaling:
   instances: 1
+
+spring:
+  jmx:
+    enabled: false
