@@ -104,9 +104,21 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.spring4all</groupId>
 			<artifactId>spring-boot-starter-swagger</artifactId>
 			<version>1.5.0.RELEASE</version>
+			<exclusions>
+			<exclusion>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+			</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -148,14 +160,21 @@
 				<groupId>com.spring4all</groupId>
 				<artifactId>spring-boot-starter-swagger</artifactId>
 				<version>1.5.0.RELEASE</version>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>com.google.guava</groupId>
-							<artifactId>guava</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.spring4all</groupId>
+						<artifactId>spring-boot-starter-swagger</artifactId>
+						<version>1.5.0.RELEASE</version>
+						<exclusions>
+							<exclusion>
+								<groupId>com.google.guava</groupId>
+								<artifactId>guava</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+
+				</dependencies>
+
 			</plugin>
 
 			<plugin>
